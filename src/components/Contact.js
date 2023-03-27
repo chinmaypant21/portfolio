@@ -47,7 +47,8 @@ export const Contact = () => {
   return (
     <section className="contact" id="connect">
       <Container>
-        <Row className="align-items-center">
+        <Row>
+        {/* <Row className="align-items-center"> */}
           <Col size={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) =>
@@ -89,9 +90,11 @@ export const Contact = () => {
               </div>}
             </TrackVisibility>
           </Col> */}
-          {/* < Col size={12} md={6}>
-            <Widget id="cum4jmc7" style={{ width: '100%', height: '200%' }} className="my-form" />
-          </Col> */}
+          < Col size={12} md={6}>
+            <div>
+              <Widget id="cum4jmc7" style={{ width: '100%', height: '100%'}} className="my-form" />
+            </div>
+          </Col>
 
         </Row>
       </Container>
