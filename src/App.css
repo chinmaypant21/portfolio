@@ -90,12 +90,13 @@ nav.navbar {
   z-index: 9999;
   transition:  0.32s ease-in-out;
 }
+
 nav.navbar.scrolled {
   padding: 0px 0;
   background-color: #121212;
 }
 nav.navbar a.navbar-brand {
-    width: 9%;
+    width: 10%;
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
@@ -235,7 +236,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-top: 0;
   padding: 260px 0 100px 0;
   background-image: url('./assets/img/banner-bg.png');
-  background-position: top center;
+  background-position: top right;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -279,23 +280,38 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: 0.3s ease-in-out;
   line-height: 1;
 }
+
 .banner button:hover svg {
   margin-left: 25px;
 }
 .banner img {
   animation: updown 3s linear infinite;
 }
+
 @keyframes updown {
     0% {
         transform: translateY(-20px);
-    }
+      }
     50% {
         transform: translateY(20px);
-    }
+      }
     100% {
         transform: translateY(-20px);
     }
 }
+
+@keyframes zoomout {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 90%;
+  }
+  100% {
+    width: 100%;
+}
+}
+
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
 }
@@ -306,7 +322,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 .skill-bx {
-  background: #151515;
+  background: #191919;
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
@@ -344,7 +360,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: black;
+  /* background-color: black; */
+  background-image: linear-gradient(180deg, #00000000, black, black, #0000005c);
 }
 .project h2 {
 	font-size: 45px;
@@ -468,11 +485,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Projects Css ************/
 .contact {
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  padding: 60px 0 200px 0;
+  /* background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%); */
+  /* padding: 60px 0 100px 0; */
+  padding: 6vw 0 5vw 0;
 }
 .contact img {
+  height: 100%;
   width: 92%;
+  animation: updown 7s linear infinite;
 }
 .contact h2 {
 	font-size: 45px;
@@ -539,13 +559,27 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /************ Footer Css ************/
-.footer {
-  padding: 0 0 50px 0;
+
+.footer-main-container{
   background-image: url('./assets/img/footer-bg.png');
-  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
+.footer {
+  padding: 0 0 20px 0;
+  /* background-image: url('./assets/img/footer-bg.png'); */
+  /* background-position: center center; */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.footer-heading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1vw;
+}
+
 .newsletter-bx {
   background: #FFFFFF;
   border-radius: 55px;
@@ -615,4 +649,65 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+  .banner img:hover{
+    animation: zoomout 5s linear infinite, updown 6s linear infinite;
+    filter: grayscale(50%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-link{
+    text-align: center;
+  }
+
+  nav.navbar.scrolled{
+    padding-bottom: 2vw;
+    border-radius:  0 0 4vw 4vw;
+  }
+
+  
+.navbar-links-dropdown{
+  flex-direction: row !important;
+  justify-content: center;
+}
+}
+
+@media screen and (max-width: 500px) {
+  nav.navbar a.navbar-brand{
+    width: unset;
+  }
+  nav.navbar{
+    padding: 1vw 0;
+  }
+
+  nav.navbar img{
+    width: 14vh;
+  }
+
+  .banner{
+    padding-top: 20vh;
+  }
+
+  .banner-animated-img{
+    padding-top: 5vh;
+  }
+
+  .footer-img-container{
+    height: 45vh;
+  }
+
+  .footer-form-container{
+    height: 30vh;
+  }
+   
+}
+
+@media screen and (max-width: 375px) {
+  .footer-img-container{
+    height: 35vh;
+  }
+
 }

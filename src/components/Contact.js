@@ -44,6 +44,8 @@ export const Contact = () => {
     }
   };
 
+  return(<></>);
+
   return (
     <section className="contact" id="connect">
       <Container>
