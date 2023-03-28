@@ -302,15 +302,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     }
 }
 
-@keyframes zoomout {
+@keyframes rotate-whole {
   0% {
-    width: 100%;
+    transform: rotate(0deg);
   }
   50% {
-    width: 90%;
+    transform: rotate(180deg);
   }
   100% {
-    width: 100%;
+    transform: rotate(360deg);
 }
 }
 
@@ -655,8 +655,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 @media screen and (min-width: 1024px) {
   .banner img:hover{
-    animation: zoomout 5s linear infinite, updown 6s linear infinite;
-    filter: grayscale(50%);
+    animation: rotate-whole 10s linear infinite;
+    filter: grayscale(40%);
   }
 }
 
