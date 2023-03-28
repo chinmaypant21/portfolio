@@ -38,39 +38,43 @@ export const Skills = () => {
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Frontend Development</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="Image" />
+                                <img src={'https://cdn.iconscout.com/icon/free/png-512/react-3-1175109.png'} alt="Image" />
                                 <h5>React.js</h5>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="Image" />
-                                <h5>HTML & CSS</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={'https://cdn.iconscout.com/icon/free/png-512/typescript-1-1175078.png'} alt="Image" />
                                 <h5>TypeScript</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>UI</h5>
+                                <img src={'https://images.ctfassets.net/ooa29xqb8tix/sHolxYPkMQO1gT5u6Aycp/bea05ce2b4fa806b7ede7a9d9dc16375/UXlogo.png'} alt="Image" />
+                                <h5>UI/UX</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Image" />
-                                <h5>Python</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={'https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png'} alt="Image" />
                                 <h5>Git</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={'https://cdn-icons-png.flaticon.com/512/2209/2209940.png'} alt="Image" />
+                                <h5>Frontend Development</h5>
+                            </div>
+                            <div className="item">
+                                <img src={'https://cdn.iconscout.com/icon/free/png-512/html-2752158-2284975.png'} alt="Image" />
+                                <h5>HTML & CSS</h5>
+                            </div>
+                            <div className="item">
+                                <img src={'https://cdn.iconscout.com/icon/free/png-256/python-3521655-2945099.png'} alt="Image" />
+                                <h5>Python</h5>
+                            </div>
+                            <div className="item">
+                                <img src={''} alt="Image" />
                                 <h5>Cloud</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={'https://cdn-icons-png.flaticon.com/512/6783/6783360.png'} alt="Image" />
+                                <h5>Security</h5>
+                            </div>
+                            <div className="item">
+                                <img src={'https://cdn.iconscout.com/icon/free/png-512/docker-3628734-3029959.png'} alt="Image" />
                                 <h5>Docker</h5>
                             </div>
 
