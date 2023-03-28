@@ -54,19 +54,15 @@ export const Skills = () => {
                                 <h5>Git</h5>
                             </div>
                             <div className="item">
-                                <img src={'https://cdn-icons-png.flaticon.com/512/2209/2209940.png'} alt="Image" />
-                                <h5>Frontend Development</h5>
-                            </div>
-                            <div className="item">
-                                <img src={'https://cdn.iconscout.com/icon/free/png-512/html-2752158-2284975.png'} alt="Image" />
-                                <h5>HTML & CSS</h5>
-                            </div>
-                            <div className="item">
                                 <img src={'https://cdn.iconscout.com/icon/free/png-256/python-3521655-2945099.png'} alt="Image" />
                                 <h5>Python</h5>
                             </div>
                             <div className="item">
-                                <img src={''} alt="Image" />
+                                <img src={'https://cdn-icons-png.flaticon.com/512/518/518713.png'} alt="Image" />
+                                <h5>Linux</h5>
+                            </div>
+                            <div className="item">
+                                <img src={'https://cdn-icons-png.flaticon.com/512/1163/1163624.png'} alt="Image" />
                                 <h5>Cloud</h5>
                             </div>
                             <div className="item">
