@@ -142,10 +142,10 @@ const InterestsSection = () => {
                 <h3 className="text-2xl font-bold text-gradient">Fun Stats</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   {[
-                    { label: "GitHub Commits", value: "2,500+", icon: "📈" },
-                    { label: "Coffee Cups", value: "∞", icon: "☕" },
-                    { label: "Mountains Climbed", value: "12", icon: "🏔️" },
-                    { label: "Books Read", value: "24/year", icon: "📚" }
+                    { label: "Cities Explored", value: "50+", icon: "🌍" },
+                    { label: "Languages Attempted", value: "3+", icon: "💬" },
+                    { label: "Mountains Climbed", value: "8", icon: "🏔️" },
+                    { label: "Spotify Wrapped", value: "Top 0.5%", icon: "🎧" }
                   ].map((stat, index) => (
                     <div
                       key={stat.label}

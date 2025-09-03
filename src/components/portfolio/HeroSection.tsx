@@ -27,10 +27,10 @@ const HeroSection = () => {
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
               <span className="block">Hello, I'm</span>
-              <span className="text-gradient">Alex Johnson</span>
+              <span className="text-gradient">Chinmay Pant</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              Frontend Engineer & UI Designer crafting beautiful, performant web experiences
+              Frontend Engineer crafting beautiful, performant web experiences
             </p>
           </div>
 
@@ -54,7 +54,7 @@ const HeroSection = () => {
 
           <div className="flex justify-center space-x-6 pt-8">
             <a 
-              href="https://github.com" 
+              href="https://github.com/chinmaypant21" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-card hover:bg-card-hover transition-smooth hover:scale-110 glow-effect"
@@ -62,7 +62,7 @@ const HeroSection = () => {
               <Github className="w-6 h-6" />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/chinmaypant/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-card hover:bg-card-hover transition-smooth hover:scale-110 glow-effect"
@@ -70,7 +70,7 @@ const HeroSection = () => {
               <Linkedin className="w-6 h-6" />
             </a>
             <a 
-              href="mailto:alex@example.com"
+              href="mailto:chinmaypant21@gmail.com"
               className="p-3 rounded-full bg-card hover:bg-card-hover transition-smooth hover:scale-110 glow-effect"
             >
               <Mail className="w-6 h-6" />
@@ -80,7 +80,7 @@ const HeroSection = () => {
 
         <button 
           onClick={scrollToAbout}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+          className="absolute bottom-14 left-1/2 transform -translate-x-1/2 animate-bounce"
         >
           <ChevronDown className="w-8 h-8 text-muted-foreground hover:text-primary transition-smooth" />
         </button>

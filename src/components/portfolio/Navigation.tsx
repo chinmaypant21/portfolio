@@ -62,7 +62,7 @@ const Navigation = () => {
               onClick={() => scrollToSection('#hero')}
               className="text-2xl font-bold text-gradient hover:scale-105 transition-transform"
             >
-              AJ
+              <img src="/logo.png" alt="Logo" height={90} width={90}></img>
             </button>
           </div>
 

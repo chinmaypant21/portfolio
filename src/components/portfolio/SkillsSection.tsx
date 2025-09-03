@@ -1,15 +1,36 @@
 import { useEffect, useRef, useState } from "react";
 
 const skills = [
-  { name: "React/Next.js", experience: "4+ years", category: "Frontend", proficiency: "Expert" },
-  { name: "TypeScript", experience: "3+ years", category: "Languages", proficiency: "Advanced" },
-  { name: "CSS/Tailwind", experience: "5+ years", category: "Styling", proficiency: "Expert" },
-  { name: "JavaScript", experience: "5+ years", category: "Languages", proficiency: "Expert" },
-  { name: "Node.js", experience: "3+ years", category: "Backend", proficiency: "Intermediate" },
-  { name: "GraphQL", experience: "2+ years", category: "APIs", proficiency: "Advanced" },
-  { name: "UI/UX Design", experience: "4+ years", category: "Design", proficiency: "Advanced" },
-  { name: "Performance Optimization", experience: "3+ years", category: "Optimization", proficiency: "Advanced" },
+  { name: "React/Next.js", experience: "3+ years", category: "Frontend", proficiency: "Expert" },
+  { name: "TypeScript", experience: "3+ years", category: "Frontend", proficiency: "Expert" },
+  { name: "JavaScript (ES6+)", experience: "3+ years", category: "Frontend", proficiency: "Expert" },
+  { name: "Vue.js", experience: "1+ years", category: "Frontend", proficiency: "Intermediate" },
+  { name: "HTML/CSS", experience: "3+ years", category: "Frontend", proficiency: "Expert" },
+  { name: "Performance Optimization", experience: "2+ years", category: "Optimization", proficiency: "Advanced" },
+  { name: "Node.js", experience: "2+ years", category: "Backend", proficiency: "Intermediate" },
+  { name: "Express.js", experience: "2+ years", category: "Backend", proficiency: "Intermediate" },
+  { name: "REST APIs", experience: "2+ years", category: "Backend", proficiency: "Advanced" },
+  { name: "Web Security", experience: "2+ years", category: "Security", proficiency: "Advanced" },
+  { name: "Git/GitHub", experience: "4+ years", category: "Version Control", proficiency: "Expert" },
 ];
+
+const technicalStack = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "JavaScript (ES6+)",
+  "Vue.js",
+  "HTML5",
+  "CSS3 / SASS",
+  "Tailwind CSS",
+  "Node.js",
+  "GraphQL",
+  "AWS",
+  "Docker",
+  "GitHub Actions",
+  "Web Security",
+
+]
 
 const SkillsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -103,10 +124,7 @@ const SkillsSection = () => {
               <div className="text-center space-y-8">
                 <h3 className="text-2xl font-bold text-gradient">Technical Stack</h3>
                 <div className="flex flex-wrap justify-center gap-4">
-                  {[
-                    'React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Node.js', 
-                    'GraphQL', 'REST APIs', 'Git', 'Docker', 'AWS', 'Vercel', 'Figma'
-                  ].map((tech, index) => (
+                  {technicalStack.map((tech, index) => (
                     <span
                       key={tech}
                       className="px-4 py-2 bg-card hover:bg-card-hover rounded-lg text-sm font-medium transition-smooth hover:scale-105 border border-border"

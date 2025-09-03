@@ -7,31 +7,25 @@ const socialLinks = [
   {
     name: "GitHub",
     icon: Github,
-    url: "https://github.com/alexjohnson",
-    description: "Check out my open source projects and contributions"
+    url: "https://github.com/chinmaypant21",
+    description: "Check out my projects and contributions"
   },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    url: "https://linkedin.com/in/alexjohnson",
+    url: "https://www.linkedin.com/in/chinmaypant/",
     description: "Connect with me professionally"
-  },
-  {
-    name: "Twitter",
-    icon: Twitter,
-    url: "https://twitter.com/alexjohnson",
-    description: "Follow my thoughts on tech and development"
   },
   {
     name: "Stack Overflow",
     icon: Code2,
-    url: "https://stackoverflow.com/users/alexjohnson",
+    url: "https://stackoverflow.com/users/15276488/chinz",
     description: "Check out my contributions and answers"
   },
   {
     name: "Email",
     icon: Mail,
-    url: "mailto:alex@example.com",
+    url: "mailto:chinmaypant21@gmail.com",
     description: "Send me a message directly"
   }
 ];
@@ -98,7 +92,7 @@ const ContactSection = () => {
                       <Mail className="w-5 h-5 text-secondary" />
                     </div>
                     <div>
-                      <div className="font-medium">alex@example.com</div>
+                      <div className="font-medium">chinmaypant21@gmail.com</div>
                       <div className="text-sm text-muted-foreground">Drop me a line anytime</div>
                     </div>
                   </div>
@@ -114,14 +108,14 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <div className="pt-4">
+                {/* <div className="pt-4">
                   <Button size="lg" className="primary-gradient hover:scale-105 transition-transform" asChild>
                     <a href="mailto:alex@example.com">
                       <Mail className="w-5 h-5 mr-2" />
                       Send Email
                     </a>
                   </Button>
-                </div>
+                </div> */}
               </div>
 
               {/* Social Links */}
@@ -158,14 +152,6 @@ const ContactSection = () => {
                     );
                   })}
                 </div>
-
-                <div className="pt-4 space-y-4">
-                  <div className="text-center">
-                    <p className="text-sm text-muted-foreground">
-                      Response time: Usually within 24 hours
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -180,14 +166,16 @@ const ContactSection = () => {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                     <Button size="lg" className="primary-gradient hover:scale-105 transition-transform" asChild>
-                      <a href="mailto:alex@example.com">
+                      <a href="mailto:chinmaypant21@gmail.com">
                         Start a Project
                       </a>
                     </Button>
                     <Button size="lg" variant="outline" asChild>
-                      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                      <span>
+                      {/* <a href="#" target="_blank" rel="noopener noreferrer"> */}
                         Download Resume
-                      </a>
+                      {/* </a> */}
+                      </span>
                     </Button>
                   </div>
                 </div>

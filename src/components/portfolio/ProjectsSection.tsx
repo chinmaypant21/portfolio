@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -162,11 +163,13 @@ const ProjectsSection = () => {
             </div>
 
             <div className="text-center">
-              <Button variant="outline" size="lg" className="group">
-                <Github className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                View More on GitHub
+              <Button variant="outline" size="lg" className="group" asChild>
+                <Link to={'https://github.com/chinmaypant21'} target="blank">
+                  <Github className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  View More on GitHub
+                </Link>
               </Button>
-            </div>
+          </div>
           </div>
         </div>
       </div>

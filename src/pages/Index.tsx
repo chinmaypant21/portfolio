@@ -20,12 +20,12 @@ const Index = () => {
         <AboutSection />
         <SkillsSection />
         <ExperienceSection />
-        <InterestsSection />
+        {/* <InterestsSection /> */}
         <ProjectsSection />
         <ContactSection />
       
         {/* Footer */}
-        <footer className="py-8 bg-background border-t border-border/50">
+        {/* <footer className="py-8 bg-background border-t border-border/50">
           <div className="container mx-auto px-6">
             <div className="text-center space-y-4">
               <p className="text-sm text-muted-foreground">
@@ -33,7 +33,7 @@ const Index = () => {
               </p>
             </div>
           </div>
-        </footer>
+        </footer> */}
       </div>
     </div>
   );

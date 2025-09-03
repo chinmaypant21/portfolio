@@ -3,42 +3,45 @@ import { Calendar, MapPin, ExternalLink } from "lucide-react";
 
 const experiences = [
   {
-    title: "Senior Frontend Engineer",
-    company: "TechCorp Inc.",
-    period: "2022 - Present",
-    location: "San Francisco, CA",
-    description: "Leading frontend development for a suite of B2B applications serving 50k+ users. Architected and implemented a design system that reduced development time by 40%.",
-    technologies: ["React", "TypeScript", "Next.js", "GraphQL", "Tailwind CSS"],
-    achievements: [
-      "Improved application performance by 60% through code splitting and optimization",
-      "Mentored 3 junior developers and established frontend best practices",
-      "Led migration from legacy codebase to modern React architecture"
-    ]
-  },
-  {
-    title: "Frontend Engineer",
-    company: "StartupXYZ",
-    period: "2020 - 2022",
+    title: "Software Engineer - Frontend",
+    company: "Gamezop",
+    period: "Aug 2024 – Present",
     location: "Remote",
-    description: "Built responsive web applications for fintech startup, focusing on user experience and performance. Collaborated closely with design and backend teams.",
-    technologies: ["React", "JavaScript", "SCSS", "REST APIs", "Jest"],
+    description: "Building scalable frontend systems and developer tooling across high-traffic consumer products",
+    technologies: ["Next.js", "Javscript", "TypeScript", "Payload CMS", "Cypress", "SEO"],
     achievements: [
-      "Developed mobile-first responsive designs with 99% cross-browser compatibility",
-      "Implemented automated testing reducing bugs by 50%",
-      "Created reusable component library used across 5 products"
+      "Spearheaded the development of a custom UI-library npm package in Next.js & TypeScript, enabling seamless serialization of Payload CMS rich text into dynamic UI components",
+      "Worked on a modular Analytics SDK in Next.js & TypeScript to standardize events and impressions tracking across 5+ products, capturing 50M+ monthly events with consistent pipelines",
+      "Optimized SEO performance through structured metadata, improved content delivery, and schema integration, resulting in a 35% increase in organic traffic",
+      "Increased user retention by 15% by optimizing Core Web Vitals (LCP, CLS, FID), resulting in a 25% rise in Lighthouse scores"
     ]
   },
   {
-    title: "Junior Frontend Developer",
-    company: "Digital Agency Pro",
-    period: "2019 - 2020",
-    location: "New York, NY",
-    description: "Developed custom websites and web applications for various clients across different industries. Gained experience in multiple frameworks and tools.",
-    technologies: ["HTML/CSS", "JavaScript", "WordPress", "PHP", "jQuery"],
+    title: "SDE I",
+    company: "GrowAgro",
+    period: "May 2023 – Jul 2024",
+    location: "Gurgaon, India",
+    description: "Owned core frontend and infrastructure initiatives, improving performance, scalability and developer experience",
+    technologies: ["React", "Vue.js", "TypeScript", "Node.js", "Ghost CMS", "AWS", "Auth0"],
     achievements: [
-      "Delivered 15+ client projects on time and within budget",
-      "Increased website performance scores by average of 35%",
-      "Learned and adapted to various client requirements and technologies"
+      "Developed the company’s main website in Vue.js, delivering a responsive, performant, and SEO-friendly experience",
+      "Launched a scalable in-house dashboard in React.js & TypeScript for real-time monitoring of employee and analytics data, improving operational insights and decision-making",
+      "Designed and managed AWS infrastructure, reducing hosting costs by 30% while increasing reliability and performance",
+      "Automated deployments with AWS + Docker-based CI/CD pipelines, streamlining release cycles and improving developer productivity",
+      "Built and integrated REST APIs for real-time data exchange between dashboards and backend services"
+    ]
+  },
+  {
+    title: "Program Engineer",
+    company: "Permissionless",
+    period: "Sep 2022 – Feb 2023",
+    location: "Remote",
+    description: "Contributed to decentralized platforms and internal tools within a Web3-focused environment",
+    technologies: ["React", "TypeScript", "AWS", "CI/CD", "Web3"],
+    achievements: [
+      "Deployed and hosted applications like Zulip, Workland (Metaverse), and Coder (IDE)",
+      "Worked on the development of the Dsync Web App UI, improving usability and feature discoverability, which led to a measurable increase in user engagement",
+      "Managed AWS deployments (EC2/ECS, S3) and set up CI/CD pipelines to ensure high reliability of services"
     ]
   }
 ];

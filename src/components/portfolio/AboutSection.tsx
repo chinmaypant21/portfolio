@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -31,32 +32,33 @@ const AboutSection = () => {
                 About <span className="text-gradient">Me</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Passionate about creating digital experiences that matter
+                Frontend engineer who loves clean code, good coffee, and better UX
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className={`space-y-6 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
                 <p className="text-lg leading-relaxed text-foreground/90">
-                  I'm a frontend engineer with over 5 years of experience building modern, 
-                  responsive web applications. I specialize in React, TypeScript, and modern 
-                  CSS frameworks, with a strong focus on performance and user experience.
+                  I design and build front-end experiences people actually enjoy using. 
+                  Over the last 3+ years I've shipped reusable UI systems, npm packages, and performance-first apps.
+                  I care about accessibility, Core Web Vitals, and pragmatic architectures that make features easy to maintain and iterate on.
                 </p>
                 <p className="text-lg leading-relaxed text-foreground/90">
-                  When I'm not coding, you'll find me exploring new design trends, 
-                  contributing to open source projects, or sharing knowledge with the 
-                  developer community through blogs and talks.
+                  Outside of work I mentor at hackathons (30+), answer questions on <Link className="bold underline" target="blank" to={'https://stackoverflow.com/users/15276488/chinz'}>Stack Overflow</Link>, and attend developer meetups and conferences.
+                </p>
+                <p className="text-lg leading-relaxed text-foreground/90">
+                  Remote-friendly: I favour async communication, good docs, and short, focused meetings.
                 </p>
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-gradient">What I bring to the table:</h3>
                   <ul className="space-y-2 text-foreground/90">
                     <li className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span>5+ years of frontend development experience</span>
+                      <span>3+ years shipping production-ready apps</span>
                     </li>
                     <li className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                      <span>Strong eye for design and user experience</span>
+                      <span>Energy for learning and sharing knowledge</span>
                     </li>
                     <li className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-accent rounded-full"></div>
@@ -77,20 +79,20 @@ const AboutSection = () => {
                       <h3 className="text-2xl font-bold text-gradient">Quick Stats</h3>
                       <div className="grid grid-cols-2 gap-6">
                         <div className="text-center">
-                          <div className="text-3xl font-bold text-primary">50+</div>
-                          <div className="text-sm text-muted-foreground">Projects Completed</div>
+                          <div className="text-3xl font-bold text-primary">20+</div>
+                          <div className="text-sm text-muted-foreground">Projects Shipped</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-3xl font-bold text-secondary">5+</div>
+                          <div className="text-3xl font-bold text-secondary">3+</div>
                           <div className="text-sm text-muted-foreground">Years Experience</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-3xl font-bold text-accent">100%</div>
-                          <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+                          <div className="text-3xl font-bold text-accent">3500+</div>
+                          <div className="text-sm text-muted-foreground">Git Commits</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-3xl font-bold text-primary">24/7</div>
-                          <div className="text-sm text-muted-foreground">Learning Mode</div>
+                          <div className="text-3xl font-bold text-primary">30+</div>
+                          <div className="text-sm text-muted-foreground">Hackathons Mentored</div>
                         </div>
                       </div>
                     </div>
