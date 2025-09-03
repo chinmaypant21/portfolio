@@ -8,12 +8,22 @@ import ProjectsSection from "@/components/portfolio/ProjectsSection";
 import ContactSection from "@/components/portfolio/ContactSection";
 import MouseFollower from "@/components/MouseFollower";
 import ParallaxBackground from "@/components/ParallaxBackground";
+import { useLayoutEffect, useState } from "react";
 
 const Index = () => {
+    const [isDesktop, setIsDesktop] = useState(true);
+
+  useLayoutEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background relative">
       <ParallaxBackground />
-      <MouseFollower />
+      {isDesktop && <MouseFollower />}
       <div className="relative z-10">
         <Navigation />
         <HeroSection />

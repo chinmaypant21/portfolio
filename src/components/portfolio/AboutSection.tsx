@@ -47,7 +47,7 @@ const AboutSection = () => {
                   Outside of work I mentor at hackathons (30+), answer questions on <Link className="bold underline" target="blank" to={'https://stackoverflow.com/users/15276488/chinz'}>Stack Overflow</Link>, and attend developer meetups and conferences.
                 </p>
                 <p className="text-lg leading-relaxed text-foreground/90">
-                  Remote-friendly: I favour async communication, good docs, and short, focused meetings.
+                  🏖️ Remote-friendly: I favour async communication, good docs, and short, focused meetings.
                 </p>
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold text-gradient">What I bring to the table:</h3>
@@ -87,7 +87,7 @@ const AboutSection = () => {
                           <div className="text-sm text-muted-foreground">Years Experience</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-3xl font-bold text-accent">3500+</div>
+                          <div className="text-3xl font-bold text-accent">2500+</div>
                           <div className="text-sm text-muted-foreground">Git Commits</div>
                         </div>
                         <div className="text-center">

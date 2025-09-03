@@ -3,43 +3,24 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const projects = [
+const projects: any = [
   {
-    title: "E-Commerce Dashboard",
-    description: "A comprehensive admin dashboard for e-commerce management with real-time analytics, inventory tracking, and order management.",
-    image: "/api/placeholder/600/400",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Chart.js", "REST API"],
-    liveUrl: "https://demo.example.com",
-    githubUrl: "https://github.com/example/project",
-    featured: true
+    title: "macOS-Style Web Application",
+    description:
+      "A web application mimicking the macOS interface, built with performance-first design principles. Achieved a 98% Lighthouse performance score, optimizing load times and user experience.",
+    image: "/projects/macos.png",
+    technologies: ["React", "Preact", "TypeScript", "Tailwind CSS"],
+    liveUrl: "https://mac.chinz.me",
+    // githubUrl: "https://github.com/example/macos-webapp",
+    featured: true,
   },
   {
-    title: "Task Management App",
-    description: "Collaborative task management application with real-time updates, team collaboration features, and intuitive drag-and-drop interface.",
-    image: "/api/placeholder/600/400",
-    technologies: ["Next.js", "GraphQL", "Prisma", "Socket.io", "Framer Motion"],
-    liveUrl: "https://tasks.example.com",
-    githubUrl: "https://github.com/example/tasks",
-    featured: true
+    title: "NFT Marketplace for Musicians (Web3)",
+    description:
+      "An NFT marketplace concept enabling music artists to tokenize tracks, manage copyright, and distribute royalties using smart contracts. Included SRS documentation, use cases, and risk mitigation planning.",
+    technologies: ["Web3", "Smart Contracts", "Software Design"],
+    featured: false,
   },
-  {
-    title: "Fitness Tracker",
-    description: "Personal fitness tracking application with workout planning, progress visualization, and social features for motivation.",
-    image: "/api/placeholder/600/400",
-    technologies: ["React Native", "Firebase", "Redux", "Chart.js"],
-    liveUrl: "https://fitness.example.com",
-    githubUrl: "https://github.com/example/fitness",
-    featured: false
-  },
-  {
-    title: "Weather Dashboard",
-    description: "Beautiful weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
-    image: "/api/placeholder/600/400",
-    technologies: ["Vue.js", "D3.js", "Weather API", "Mapbox"],
-    liveUrl: "https://weather.example.com",
-    githubUrl: "https://github.com/example/weather",
-    featured: false
-  }
 ];
 
 const ProjectsSection = () => {
@@ -70,10 +51,10 @@ const ProjectsSection = () => {
           <div className={`space-y-12 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
             <div className="text-center space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold">
-                Featured <span className="text-gradient">Projects</span>
+                My <span className="text-gradient">Initial Days</span>
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                A showcase of my recent work and side projects
+                Side Projects That Shaped My College Journey
               </p>
             </div>
 
@@ -81,30 +62,45 @@ const ProjectsSection = () => {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className={`group card-gradient rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-smooth hover:scale-[1.02] ${
-                    isVisible ? 'animate-fade-in-up' : 'opacity-0'
-                  }`}
+                  className={`group card-gradient rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-smooth hover:scale-[1.02] ${isVisible ? 'animate-fade-in-up' : 'opacity-0'
+                    }`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <div className="relative overflow-hidden">
                     <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                      <Eye className="w-16 h-16 text-primary/50" />
+                    {
+                      project.image ? (
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                        />
+                      ) : (
+                      <Eye className="w-16 h-16 text-primary/50" />)
+                    }
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
                     <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-smooth">
                       <div className="flex space-x-2">
-                        <Button size="sm" variant="secondary" asChild>
-                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="w-4 h-4 mr-2" />
-                            Live Demo
-                          </a>
-                        </Button>
-                        <Button size="sm" variant="outline" asChild>
-                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                            <Github className="w-4 h-4 mr-2" />
-                            Code
-                          </a>
-                        </Button>
+                        {
+                          project.liveUrl &&
+                          <Button size="sm" variant="secondary" asChild>
+                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Live Demo
+                            </a>
+                          </Button>
+                        }
+
+                        {
+                          project.githubUrl &&
+                          <Button size="sm" variant="outline" asChild>
+                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                              <Github className="w-4 h-4 mr-2" />
+                              Code
+                            </a>
+                          </Button>
+                        }
                       </div>
                     </div>
                     {project.featured && (
@@ -138,24 +134,32 @@ const ProjectsSection = () => {
                     </div>
 
                     <div className="flex space-x-4 pt-2">
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-1 text-sm text-primary hover:text-primary-dark transition-smooth"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        <span>View Live</span>
-                      </a>
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-1 text-sm text-muted-foreground hover:text-foreground transition-smooth"
-                      >
-                        <Github className="w-4 h-4" />
-                        <span>Source Code</span>
-                      </a>
+                      {
+                        project.liveUrl &&
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center space-x-1 text-sm text-primary hover:text-primary-dark transition-smooth"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          <span>View Live</span>
+                        </a>
+                      }
+
+                      {
+                        project.githubUrl &&
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center space-x-1 text-sm text-muted-foreground hover:text-foreground transition-smooth"
+                        >
+                          <Github className="w-4 h-4" />
+                          <span>Source Code</span>
+                        </a>
+                      }
+
                     </div>
                   </div>
                 </div>
@@ -169,7 +173,7 @@ const ProjectsSection = () => {
                   View More on GitHub
                 </Link>
               </Button>
-          </div>
+            </div>
           </div>
         </div>
       </div>
