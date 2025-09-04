@@ -23,8 +23,8 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 bg-background-subtle">
-      <div className="container mx-auto px-6">
+    <section id="about" ref={sectionRef} className="py-20">
+      <div className="container mx-auto px-6 overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <div className={`space-y-8 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
             <div className="text-center space-y-4">

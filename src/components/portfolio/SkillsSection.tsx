@@ -50,7 +50,7 @@ const SkillsSection = () => {
           });
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -61,7 +61,7 @@ const SkillsSection = () => {
   }, []);
 
   return (
-    <section id="skills" ref={sectionRef} className="py-20 bg-background">
+    <section id="skills" ref={sectionRef} className="py-20">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className={`space-y-12 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>

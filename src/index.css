@@ -118,19 +118,21 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   
   html {
     scroll-behavior: smooth;
+    background-color: var(--background);
   }
 }
 
 @layer components {
   /* Portfolio Component Styles */
   .hero-gradient {
-    background: var(--gradient-hero);
+    /* background: var(--gradient-hero); */
+    background: linear-gradient(to bottom, black 0%, black 6%, transparent 100%);
   }
   
   .card-gradient {

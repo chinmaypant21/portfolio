@@ -78,12 +78,9 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <button 
-          onClick={scrollToAbout}
-          className="absolute bottom-14 left-1/2 transform -translate-x-1/2 animate-bounce"
-        >
-          <ChevronDown className="w-8 h-8 text-muted-foreground hover:text-primary transition-smooth" />
-        </button>
+        <div className="flex justify-center absolute bottom-14 left-0 right-0 mx-auto">
+          <ChevronDown onClick={scrollToAbout} className="w-8 h-8 text-muted-foreground hover:text-primary transition-smooth animate-bounce" />
+        </div>
       </div>
     </section>
   );

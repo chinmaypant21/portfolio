@@ -52,7 +52,7 @@ const ContactSection = () => {
   }, []);
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-background-subtle">
+    <section id="contact" ref={sectionRef} className="py-20">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className={`space-y-12 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
