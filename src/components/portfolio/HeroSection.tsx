@@ -38,7 +38,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               className="primary-gradient hover:scale-105 transition-transform duration-300 px-8 py-6 text-lg"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View My Work
             </Button>
