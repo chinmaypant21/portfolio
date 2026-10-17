@@ -3,7 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/portfolio/Hero";
 import { Section } from "@/components/portfolio/Section";
 import { WorkCard } from "@/components/portfolio/WorkCard";
+import { NoteEntry } from "@/components/portfolio/NoteEntry";
 import { Footer } from "@/components/portfolio/Footer";
+import { renderInline } from "@/lib/inline";
 import {
   community,
   credentials,
@@ -33,35 +35,18 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+// Security notes are hidden for now. Set to true to show the section and its
+// nav link again, and renumber the sections after it.
+const SHOW_NOTES = false;
+
 const nav = [
   { label: "Work", href: "#work" },
   { label: "Engineering", href: "#engineering" },
   { label: "Research", href: "#research" },
-  { label: "Notes", href: "#notes" },
+  ...(SHOW_NOTES ? [{ label: "Notes", href: "#notes" }] : []),
   { label: "Certifications", href: "#credentials" },
   { label: "Community", href: "#community" },
 ];
-
-function renderInlineLinks(text: string) {
-  const parts = text.split(/\[([^\]]+)\]\(([^)]+)\)/g);
-  return parts.map((part, i) => {
-    if (i % 3 === 2) return null;
-    if (i % 3 === 1) {
-      return (
-        <a
-          key={i}
-          href={parts[i + 1]}
-          target="_blank"
-          rel="noreferrer"
-          className="link-underline text-foreground"
-        >
-          {part}
-        </a>
-      );
-    }
-    return <span key={i}>{part}</span>;
-  });
-}
 
 function Index() {
   return (
@@ -92,11 +77,15 @@ function Index() {
           id="work"
           index="01"
           title="Selected security work"
-          lead="Security research, engineering work, tooling, and lab exercises — grouped by the kind of problem rather than the employer."
+          lead="Security research, engineering work and tooling."
         >
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4">
             {securityWork.map((work) => (
-              <WorkCard key={work.title} work={work} />
+              <WorkCard
+                key={work.title}
+                work={work}
+                className={work.featured ? "sm:col-span-2" : undefined}
+              />
             ))}
           </div>
         </Section>
@@ -105,7 +94,7 @@ function Index() {
           id="engineering"
           index="02"
           title="Engineering"
-          lead="Software work I've done so far, and how it shapes the way I approach security."
+          lead="Work I've done so far, and how it shapes the way I approach security."
         >
           <ul className="divide-y divide-border">
             {engineering.map((role) => (
@@ -124,10 +113,7 @@ function Index() {
                 ) : null}
                 <ul className="mt-3 max-w-2xl space-y-2">
                   {role.highlights.map((point) => (
-                    <li
-                      key={point}
-                      className="relative pl-5 text-sm leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-accent"
-                    >
+                    <li key={point} className="bullet text-sm leading-relaxed text-muted-foreground">
                       {point}
                     </li>
                   ))}
@@ -144,7 +130,7 @@ function Index() {
           id="research"
           index="03"
           title="Research"
-          lead="Publications, preprints, and longer technical investigations."
+          lead="Publications and preprints"
         >
           <ul className="divide-y divide-border">
             {research.map((paper) => (
@@ -179,31 +165,24 @@ function Index() {
           </ul>
         </Section>
 
-        <Section
-          id="notes"
-          index="04"
-          title="Security notes"
-          lead="Write-ups and working notes from things I read, break, or rebuild."
-        >
-          <div className="grid gap-4">
-            {notes.map((note) => (
-              <a key={note.title} href={note.href} className="panel block p-6">
-                <div className="flex items-center justify-between gap-4">
-                  <span className="label-mono">{note.date}</span>
-                  <span className="label-mono">{note.readingTime}</span>
-                </div>
-                <h3 className="display mt-4 text-lg font-medium md:text-xl">{note.title}</h3>
-                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                  {note.excerpt}
-                </p>
-              </a>
-            ))}
-          </div>
-        </Section>
+        {SHOW_NOTES ? (
+          <Section
+            id="notes"
+            index="04"
+            title="Security notes"
+            lead="Write-ups and working notes from things I read, break, or rebuild."
+          >
+            <div className="grid min-w-0 gap-4">
+              {notes.map((note) => (
+                <NoteEntry key={note.id} note={note} />
+              ))}
+            </div>
+          </Section>
+        ) : null}
 
         <Section
           id="credentials"
-          index="05"
+          index="04"
           title="Certifications"
           lead="Certifications and programmes."
         >
@@ -225,7 +204,7 @@ function Index() {
 
         <Section
           id="community"
-          index="06"
+          index="05"
           title="Community & Open Source"
           lead="Hackathons, mentoring, volunteering, and open-source involvement."
         >
@@ -242,7 +221,7 @@ function Index() {
                   <span className="label-mono">{item.period}</span>
                 </div>
                 <p className="mt-3 max-w-2xl whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
-                  {renderInlineLinks(item.summary)}
+                  {renderInline(item.summary)}
                 </p>
               </li>
             ))}

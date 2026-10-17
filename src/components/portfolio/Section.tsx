@@ -25,7 +25,8 @@ export function Section({
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">{lead}</p>
           ) : null}
         </header>
-        <div className="md:col-span-8">{children}</div>
+        {/* min-w-0 stops wide content (e.g. code blocks) from stretching the column */}
+        <div className="min-w-0 md:col-span-8">{children}</div>
       </div>
     </section>
   );

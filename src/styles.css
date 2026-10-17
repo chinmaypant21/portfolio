@@ -181,3 +181,20 @@
   border-radius: calc(var(--radius) - 1px);
   color: var(--color-muted-foreground);
 }
+
+/* List item with a small accent dot */
+@utility bullet {
+  position: relative;
+  padding-left: 1.25rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 9999px;
+    background-color: var(--color-accent);
+  }
+}
