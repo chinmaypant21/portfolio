@@ -53,9 +53,8 @@ function Index() {
     <div className="min-h-screen">
       <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4 md:px-10">
-          <a href="#top" className="font-mono text-xs tracking-widest uppercase">
-            {profile.name.split(" ")[0]}
-            <span className="text-accent">.</span>
+          <a href="#top" className="flex items-center">
+            <img src="/logo.png" alt={profile.name} className="h-7 w-auto object-contain" />
           </a>
           <nav className="hidden gap-7 font-mono text-xs md:flex">
             {nav.map((item) => (
