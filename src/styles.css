@@ -1,0 +1,183 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — minimal editorial/technical dark theme.
+ * All colors use oklch. Add new tokens to :root and register in @theme inline.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 10px);
+  --radius-3xl: calc(var(--radius) + 14px);
+  --radius-4xl: calc(var(--radius) + 18px);
+
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Newsreader", ui-serif, Georgia, serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --tracking-display: -0.03em;
+  --tracking-label: 0.18em;
+}
+
+:root {
+  --radius: 0.25rem;
+
+  --background: oklch(0.16 0.008 260);
+  --foreground: oklch(0.95 0.005 260);
+  --surface: oklch(0.19 0.009 260);
+  --surface-raised: oklch(0.22 0.01 260);
+
+  --card: oklch(0.19 0.009 260);
+  --card-foreground: oklch(0.95 0.005 260);
+  --popover: oklch(0.19 0.009 260);
+  --popover-foreground: oklch(0.95 0.005 260);
+
+  --primary: oklch(0.95 0.005 260);
+  --primary-foreground: oklch(0.16 0.008 260);
+  --secondary: oklch(0.24 0.01 260);
+  --secondary-foreground: oklch(0.93 0.005 260);
+
+  --muted: oklch(0.24 0.01 260);
+  --muted-foreground: oklch(0.68 0.012 260);
+
+  --accent: oklch(0.8 0.12 88);
+  --accent-foreground: oklch(0.18 0.02 88);
+
+  --destructive: oklch(0.62 0.2 25);
+  --destructive-foreground: oklch(0.97 0.005 260);
+
+  --border: oklch(1 0 0 / 9%);
+  --border-strong: oklch(1 0 0 / 18%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.8 0.12 88 / 45%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "ss01", "ss02";
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-foreground);
+  }
+}
+
+/* Small uppercase technical label */
+@utility label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--color-muted-foreground);
+}
+
+/* Editorial display heading */
+@utility display {
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+
+/* Hairline rule used between editorial rows */
+@utility rule-top {
+  border-top: 1px solid var(--color-border);
+}
+
+/* Inline link with a restrained underline that grows on hover */
+@utility link-underline {
+  position: relative;
+  color: var(--color-foreground);
+  transition: color 200ms ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background-color: var(--color-border-strong);
+    transition: background-color 200ms ease;
+  }
+
+  &:hover {
+    color: var(--color-accent);
+  }
+
+  &:hover::after {
+    background-color: var(--color-accent);
+  }
+}
+
+/* Subtle card treatment for project / article rows */
+@utility panel {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease,
+    transform 220ms ease;
+
+  &:hover {
+    border-color: var(--color-border-strong);
+    background-color: var(--color-surface-raised);
+  }
+}
+
+/* Tag pill */
+@utility tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius) - 1px);
+  color: var(--color-muted-foreground);
+}
