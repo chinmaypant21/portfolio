@@ -72,7 +72,7 @@ export const securityWork: Work[] = [
       "Noir now detects headers and cookies read through constants, such as webhook signature headers, in Next.js, Express, Koa and Hono apps. Previously these inputs were missed entirely.",
       "Next.js Server Actions are now reported as their own endpoint type, and form-data bodies list each field.",
       "Found and reported four gaps in Noir's Next.js analysis, and added regression tests that keep commented-out code out of scan results.",
-      "Documented 10 GitHub Action inputs that had no documentation, in English and Korean.",
+      "Documented 10 GitHub Action inputs that had no documentation",
       "In progress: an npm release (`npx @owasp-noir/noir`) published with Trusted Publishing and signed provenance.",
     ],
     tags: ["Attack surface", "Static analysis", "Supply chain", "Next.js"],
@@ -99,6 +99,7 @@ export type Role = {
   company: string;
   title: string;
   period: string;
+  url?: string;
   summary?: string;
   highlights: string[];
   stack: string[];
@@ -106,9 +107,10 @@ export type Role = {
 
 export const engineering: Role[] = [
   {
-    company: "Triplora",
-    title: "Engineer – Systems & Security",
-    period: "Nov 2025 — May 2026",
+    company: "Locus",
+    title: "Systems & Security Engineer (Part-time)",
+    period: "Dec 2025 — Apr 2026",
+    url: "https://golocus.xyz/",
     summary: "TravelTech, global. A DeFi-powered travel platform with on-chain stablecoin rewards.",
     highlights: [
       "Led development of a production platform and its supporting backend services.",
@@ -119,8 +121,7 @@ export const engineering: Role[] = [
   {
     company: "Gamezop",
     title: "Software Engineer",
-    period: "Aug 2024 — Oct 2025",
-    summary: "\n",
+    period: "Aug 2024 — Nov 2025",
     highlights: [
       "Built a custom Next.js UI library that parsed and rendered Payload CMS rich text, with sanitization during serialization to mitigate XSS.",
       "Engineered a modular analytics SDK processing 100M+ events monthly across 5+ products.",
@@ -509,7 +510,7 @@ export const community: Involvement[] = [
     title: "Organising team",
     org: "KongligCTF 2026",
     period: "2026",
-    summary: "Part of the organising team for KongligCTF 2026, the first CTF hosted at KTH.",
+    summary: "Part of the organising team for [KongligCTF 2026](https://kongligc.tf/), the first CTF hosted at KTH.",
   },
   {
     title: "Volunteer",
@@ -525,11 +526,11 @@ export const community: Involvement[] = [
       "Top 5% global [contributor](https://stackoverflow.com/users/15276488/chinz) (1,000+ reputation) in programming and security, reaching 25,000+ developers.",
   },
   {
-    title: "Hackathon mentor & organiser",
-    org: "National hackathons, India",
+    title: "Hackathon particpant, mentor & organiser",
+    org: "",
     period: "2022 — Present",
     summary:
-      "Participated in and mentored at 30+ national hackathons, reviewing over 300 projects across software engineering, cybersecurity, and AI.\n\nCo-organised two editions of India's largest student-run hackathon, managing operations for 2,500+ attendees.",
+      "Participated in and mentored at 30+ hackathons, including Tech Europe Agentic AI Hack and Lovable Hackathon.\n\nCo-organised two editions of India's largest student-run hackathon, managing operations for 2,500+ attendees.",
   },
   {
     title: "Volunteer contributor",

@@ -5,7 +5,7 @@ import { Section } from "@/components/portfolio/Section";
 import { WorkCard } from "@/components/portfolio/WorkCard";
 import { NoteEntry } from "@/components/portfolio/NoteEntry";
 import { Footer } from "@/components/portfolio/Footer";
-import { renderInline } from "@/lib/inline";
+import { linkTarget, renderInline } from "@/lib/inline";
 import {
   community,
   credentials,
@@ -101,7 +101,18 @@ function Index() {
                 <div className="flex flex-wrap items-baseline justify-between gap-3">
                   <h3 className="text-lg font-medium">
                     {role.title}
-                    <span className="text-muted-foreground"> · {role.company}</span>
+                    <span className="text-muted-foreground"> · </span>
+                    {role.url ? (
+                      <a
+                        href={role.url}
+                        {...linkTarget(role.url)}
+                        className="text-muted-foreground underline decoration-border-strong underline-offset-4 transition-colors hover:text-foreground hover:decoration-accent"
+                      >
+                        {role.company}
+                      </a>
+                    ) : (
+                      <span className="text-muted-foreground">{role.company}</span>
+                    )}
                   </h3>
                   <span className="label-mono">{role.period}</span>
                 </div>
