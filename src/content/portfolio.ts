@@ -113,8 +113,9 @@ export const engineering: Role[] = [
     url: "https://golocus.xyz/",
     summary: "TravelTech, global. A DeFi-powered travel platform with on-chain stablecoin rewards.",
     highlights: [
-      "Led development of a production platform and its supporting backend services.",
-      "Owned platform security, code quality, and secure development practices.",
+      "Built the booking and payments platform from scratch to production in 2 months using Next.js and Express.",
+      "Implemented wallet-based authentication and role-based access control across customer and internal roles.",
+      "Worked with developers to enforce secure development in CI with Dependabot, gitleaks, branch protection and mandatory code review, catching 15+ vulnerable dependencies and exposed secrets in the first 90 days.",
     ],
     stack: ["\n"],
   },
