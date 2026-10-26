@@ -67,13 +67,13 @@ export const securityWork: Work[] = [
   {
     title: "Improving endpoint discovery in OWASP Noir",
     summary:
-      "Noir maps a codebase's endpoints and inputs so testers know what to attack. I improved its Next.js analysis and am working on a secure npm release path.",
+      "Noir maps a codebase's endpoints and inputs so testers know what to attack. I improved its Next.js analysis and built its npm release pipeline.",
     highlights: [
       "Noir now detects headers and cookies read through constants, such as webhook signature headers, in Next.js, Express, Koa and Hono apps. Previously these inputs were missed entirely.",
       "Next.js Server Actions are now reported as their own endpoint type, and form-data bodies list each field.",
       "Found and reported four gaps in Noir's Next.js analysis, and added regression tests that keep commented-out code out of scan results.",
       "Documented 10 GitHub Action inputs that had no documentation",
-      "In progress: an npm release (`npx @owasp-noir/noir`) published with Trusted Publishing and signed provenance.",
+      "Built Noir's npm release pipeline (`npx @owasp-noir/noir`), secured against supply-chain attacks: it publishes through Trusted Publishing with signed provenance, and pins each binary's SHA-256 so installs refuse a tampered download.",
     ],
     tags: ["Attack surface", "Static analysis", "Supply chain", "Next.js"],
     year: "2026",
@@ -417,10 +417,9 @@ export const notes: Note[] = [
     id: "noir-npm",
     title: "Publishing a security tool to npm, safely",
     project: "OWASP Noir",
-    date: "Jul 2026",
-    ongoing: true,
+    date: "Jul — Oct 2026",
     excerpt:
-      "npm would make Noir easier to install, and it's also one of the most targeted package registries. Working notes from a design that's still in progress.",
+      "npm makes Noir easier to install, but it's also one of the most targeted package registries. How I built the release so it doesn't become the weakest link.",
     sections: [
       {
         heading: "Context",
@@ -436,11 +435,11 @@ export const notes: Note[] = [
         ],
       },
       {
-        heading: "The draft",
+        heading: "The release pipeline",
         blocks: [
           {
             type: "p",
-            text: `[PR #2244](${NOIR}/pull/2244) adds a thin wrapper package whose install script downloads the release binary for the user's platform, and a workflow that publishes it whenever a GitHub release goes out. The security work is in how it publishes:`,
+            text: `[PR #2244](${NOIR}/pull/2244) adds a thin wrapper package whose install script downloads the release binary for the user's platform, and a workflow that publishes it once a GitHub release's binaries are uploaded. The security work is in how it publishes:`,
           },
           {
             type: "list",
@@ -448,16 +447,17 @@ export const notes: Note[] = [
               "**No stored token.** It's built for npm Trusted Publishing: the workflow proves its identity to npm with a short-lived OIDC token, so there's no long-lived publish token in the repo to steal.",
               "**Provenance.** `npm publish --provenance` attaches a signed statement linking each version to the repository, commit and workflow that built it. Users can check it with `npm audit signatures`.",
               "**Least privilege.** The publish job only gets `contents: read` and `id-token: write`.",
+              "**Version check.** The workflow refuses to publish if the package version doesn't match the release tag.",
             ],
           },
         ],
       },
       {
-        heading: "Still open",
+        heading: "Covering the binary too",
         blocks: [
           {
             type: "p",
-            text: "Provenance proves where the npm package came from, but the binary is downloaded by the install script, outside that chain. Two ways to close the gap:",
+            text: "Provenance proves where the npm package came from, but the binary is downloaded by the install script, outside that chain. There were two ways to close the gap:",
           },
           {
             type: "list",
@@ -468,14 +468,24 @@ export const notes: Note[] = [
           },
           {
             type: "p",
-            text: "The second is stronger but means more packages to maintain. The maintainers are on board with the direction, and I'm picking the work back up.",
+            text: "I went with the first: it keeps a single package to maintain. At publish time the workflow downloads the release binaries and writes their hashes into the package, and the install script refuses any download that doesn't match. The trade-off is that a release's binaries can't be replaced after npm has published it, so a broken build means a new patch release.",
+          },
+        ],
+      },
+      {
+        heading: "Outcome",
+        blocks: [
+          {
+            type: "p",
+            text: "The PR was merged in October 2026, and Noir is now on npm as [@owasp-noir/noir](https://www.npmjs.com/package/@owasp-noir/noir).",
           },
         ],
       },
     ],
     links: [
-      { label: "Draft PR #2244", href: `${NOIR}/pull/2244` },
+      { label: "PR #2244", href: `${NOIR}/pull/2244` },
       { label: "Issue #1861", href: `${NOIR}/issues/1861` },
+      { label: "npm package", href: "https://www.npmjs.com/package/@owasp-noir/noir" },
     ],
   },
 ];
