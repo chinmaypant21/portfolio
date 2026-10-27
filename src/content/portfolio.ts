@@ -73,7 +73,7 @@ export const securityWork: Work[] = [
       "Next.js Server Actions are now reported as their own endpoint type, and form-data bodies list each field.",
       "Found and reported four gaps in Noir's Next.js analysis, and added regression tests that keep commented-out code out of scan results.",
       "Documented 10 GitHub Action inputs that had no documentation",
-      "Built Noir's npm release pipeline (`npx @owasp-noir/noir`), secured against supply-chain attacks: it publishes through Trusted Publishing with signed provenance, and pins each binary's SHA-256 so installs refuse a tampered download.",
+      "Built Noir's npm release pipeline, secured against supply-chain attacks. It publishes through Trusted Publishing with signed provenance, and pins each binary's SHA-256 so installs refuse a tampered download.",
     ],
     tags: ["Attack surface", "Static analysis", "Supply chain", "Next.js"],
     year: "2026",
